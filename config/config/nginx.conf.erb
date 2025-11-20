@@ -1,52 +1,17 @@
-worker_processes 1;
-daemon off; # Run in the foreground
+const express = require('express');
+const path = require('path');
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-events {
-  worker_connections 1024;
-}
+// Serve all static files (HTML, CSS, images) from the root directory
+app.use(express.static(__dirname));
 
-http {
-# Update MIME types path for Heroku
-  types {
-    text/html                             html htm shtml;
-    text/css                              css;
-    text/xml                              xml;
-    image/gif                             gif;
-    image/jpeg                            jpeg jpg;
-    application/javascript                js;
-    application/json                      json;
-    image/png                             png;
-    image/svg+xml                         svg svgz;
-    image/x-icon                          ico;
-  }
-  default_type text/html;
-# Redirect all logs to Heroku's log stream
-  error_log stderr;
-  access_log /dev/stdout;
+// Specific route for the homepage
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
-  sendfile      on;
-  keepalive_timeout 65;
-
-  server {
-    # Listen on the port Heroku provides
-    listen <%= ENV["PORT"] %>;
-    server_name _;
-    
-    # Set the root directory to your app's root
-    root /app;
-
-    location / {
-      # Use index.html as the default file
-      index index.html;
-      
-      # Turn off directory listing
-      autoindex off; 
-
-      # --- ADD: Force browser to never cache this page ---
-      add_header 'Cache-Control' 'no-cache, no-store, must-revalidate';
-      add_header 'Pragma' 'no-cache';
-      add_header 'Expires' '0';
-      # ----------------------------------------------------
-    }
-  }
-}
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
