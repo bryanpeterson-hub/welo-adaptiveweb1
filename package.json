@@ -2,7 +2,14 @@
   "name": "welo-demo-app",
   "version": "1.0.0",
   "description": "Welo High Tech Adaptive Website Demo",
+  "main": "server.js",
   "engines": {
     "node": "18.x"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
