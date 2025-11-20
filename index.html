@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions - Welo High Tech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Reusing Welo Colors */
+        :root {
+            --welo-dark-blue: #0B3D59;
+            --welo-light-blue: #00A9E0;
+            --welo-accent: #008C95;
+            --welo-bg-light: #F4F6F8;
+            --welo-text: #333333;
+        }
+        body { font-family: 'Inter', sans-serif; color: var(--welo-text); }
+        .header-link {
+            @apply py-6 border-b-4 border-transparent font-medium text-gray-600;
+            transition: all 0.2s;
+        }
+        .header-link:hover { color: var(--welo-light-blue); border-bottom-color: var(--welo-light-blue); }
+        
+        /* Pulse Button */
+        .pulse-button {
+            box-shadow: 0 0 0 0 rgba(0, 169, 224, 0.7);
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 169, 224, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(0, 169, 224, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 169, 224, 0); }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header (Identical to Index) -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html">
+                        <img src="https://welohightech.com/wp-content/uploads/sites/5/2022/05/Welo-W-Horizontal-trimmed.png" alt="Welo Logo" class="h-10 w-auto">
+                    </a>
+                </div>
+                <div class="hidden lg:flex lg:space-x-8">
+                    <a href="#" class="header-link text-[#00A9E0] border-b-4 border-[#00A9E0]">Solutions</a>
+                    <a href="#" class="header-link">Services</a>
+                    <a href="#" class="header-link">Industries</a>
+                    <a href="#" class="header-link">Resources</a>
+                    <a href="#" class="header-link">About Us</a>
+                </div>
+                <div class="flex items-center space-x-4 text-gray-500">
+                    <button><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Simple Hero -->
+        <section class="bg-welo-bg py-20 text-center">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl font-bold text-[#0B3D59] mb-4">Engineering Services & Solutions</h1>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">End-to-end product development, manufacturing support, and digital transformation services.</p>
+            </div>
+        </section>
+
+        <!-- Content Placeholder -->
+        <section class="py-16">
+            <div class="container mx-auto px-4 text-center">
+                <p class="text-gray-500">Explore our specific offerings...</p>
+                <!-- Links to trigger flows -->
+                <div class="mt-8">
+                    <a href="index.html" class="inline-block bg-[#00A9E0] text-white font-bold py-3 px-6 rounded-full hover:opacity-90">Go to Smart Manufacturing (Demo Start)</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Agent Button -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <a href="index.html" class="pulse-button bg-[#00A9E0] text-white font-bold py-4 px-6 rounded-full shadow-2xl text-lg flex items-center hover:bg-opacity-90 transition-all">
+            <svg class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+            </svg>
+            Welo Assistant
+        </a>
+    </div>
+
+</body>
+</html>
