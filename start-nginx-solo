@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Use the default directory if HOME is not set
+if [ -z "$HOME" ]; then
+    export HOME=/app
+fi
+
+# Ensure nginx directory exists
+mkdir -p $HOME/nginx/logs
+
+# Start nginx in the foreground
+erb $HOME/config/nginx.conf.erb > $HOME/nginx/nginx.conf
+nginx -p $HOME/nginx -c $HOME/nginx/nginx.conf
