@@ -1,0 +1,8 @@
+{
+  "name": "welo-demo-app",
+  "version": "1.0.0",
+  "description": "Welo High Tech Adaptive Website Demo",
+  "engines": {
+    "node": "18.x"
+  }
+}
